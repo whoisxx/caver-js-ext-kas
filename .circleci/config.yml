@@ -177,6 +177,7 @@ workflows:
           <<: *test_steps
           requires:
             - publish_rc
+          context: kas_common_refs_prod
           name: docs_update_rc
 
       # publish jobs - prod
@@ -195,4 +196,5 @@ workflows:
           <<: *test_steps
           requires:
             - publish_prod
+          context: kas_common_refs_prod
           name: docs_update_prod
