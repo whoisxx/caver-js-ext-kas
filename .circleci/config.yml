@@ -192,8 +192,6 @@ workflows:
           requires:
             - publish_prod
       - docs_update:
-          <<: *stage_rc
-          <<: *test_steps
           requires:
             - publish_prod
           context: kas_common_refs_prod
