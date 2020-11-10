@@ -146,7 +146,7 @@ stage_defaults:
         ignore: /.*/
   tests: &test_steps
     requires:
-      - test
+      # - test
       - tag_verify
       - build
 
