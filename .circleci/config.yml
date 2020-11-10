@@ -101,7 +101,7 @@ jobs:
             if [[ -z $CIRCLE_TAG ]]; then
               aws s3 sync out/ s3://$FRONTEND_BUCKET/en/sdk/js/latest/
             fi
-            aws s3 sync out/ s3://$FRONTEND_BUCKET/en/sdk/js/$VERSION/
+            aws s3 sync out/ s3://$FRONTEND_BUCKET/en/sdk/js/v$VERSION/
 
   release_PR:
     executor: default
