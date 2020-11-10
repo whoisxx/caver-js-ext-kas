@@ -175,6 +175,8 @@ workflows:
       - docs_update:
           <<: *stage_rc
           <<: *test_steps
+          requires:
+            - publish_rc
           name: docs_update_rc
 
       # publish jobs - prod
@@ -191,4 +193,6 @@ workflows:
       - docs_update:
           <<: *stage_rc
           <<: *test_steps
+          requires:
+            - publish_prod
           name: docs_update_prod
