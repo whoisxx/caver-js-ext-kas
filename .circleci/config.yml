@@ -97,7 +97,7 @@ jobs:
           name: "Upload S3 bucket"
           command: |
             sudo apt-get update && sudo apt-get install awscli
-            VERSION=v$(awk '/"version/ {gsub("\"",""); print $2}' package.json | tr -d ',')
+            VERSION=$(awk '/"version/ {gsub("\"",""); print $2}' package.json | tr -d ',')
             if [[ -z $CIRCLE_TAG ]]; then
               aws s3 sync out/ s3://$FRONTEND_BUCKET/en/sdk/js/latest/
             fi
